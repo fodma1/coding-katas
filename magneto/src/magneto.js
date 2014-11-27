@@ -16,10 +16,10 @@ var magnetoEffect = (function () {
 			return this;
 		},
 		adjustPoint: function (point) {
-			if (point == (0, 0)) {
-				return (0,0);
+			if (point.x === 0) {
+				return {x:0,y:0};
 			} else {
-				return (50, 50);				
+				return {x:50,y:50};				
 			}
 		}
 	}
