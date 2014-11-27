@@ -16,7 +16,11 @@ var magnetoEffect = (function () {
 			return this;
 		},
 		adjustPoint: function (point) {
-			return (50, 50);
+			if (point == (0, 0)) {
+				return (0,0);
+			} else {
+				return (50, 50);				
+			}
 		}
 	}
 })();
