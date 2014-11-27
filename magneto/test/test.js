@@ -33,10 +33,10 @@ suite('magnetoEffect', function() {
     assert.deepEqual({x:0,y:0}, adjustedPoint);
   });
 
-  // test( 'Example 3', function() {
-  //   magnetoEffect.removeMagneticPoints();
-  //   magnetoEffect.addMagneticPoint({x:50,y:50}).addMagneticPoint({x:100,y:50});
-  //   var adjustedPoint = magnetoEffect.adjustPoint({x:101,y:48});
-  //   assert.deepEqual({x:100,y:50}, adjustedPoint);
-  // });
+  test( 'Example 3', function() {
+    magnetoEffect.removeMagneticPoints();
+    magnetoEffect.addMagneticPoint({x:50,y:50}).addMagneticPoint({x:100,y:50});
+    var adjustedPoint = magnetoEffect.adjustPoint({x:101,y:48});
+    assert.deepEqual({x:100,y:50}, adjustedPoint);
+  });
 });

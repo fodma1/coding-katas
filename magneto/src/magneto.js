@@ -16,11 +16,13 @@ var magnetoEffect = (function () {
 			return this;
 		},
 		adjustPoint: function (point) {
-			if (point.x === 0) {
-				return {x:0,y:0};
-			} else {
-				return {x:50,y:50};				
+			for (var i = 0; i < magneticPoints.length; i++) {
+				var magneticPoint = magneticPoints[i];
+				if (Math.abs(point.x - magneticPoint.x) <= radius && Math.abs(point.y - magneticPoint.y) <= radius) {
+					return magneticPoint;
+				}
 			}
+			return point;
 		}
 	}
 })();
