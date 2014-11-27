@@ -39,4 +39,11 @@ suite('magnetoEffect', function() {
     var adjustedPoint = magnetoEffect.adjustPoint({x:101,y:48});
     assert.deepEqual({x:100,y:50}, adjustedPoint);
   });
+
+  test( 'Example 4', function() {
+    magnetoEffect.removeMagneticPoints();
+    magnetoEffect.addMagneticPoint({x:50,y:50}).addMagneticPoint({x:51,y:51});
+    var adjustedPoint = magnetoEffect.adjustPoint({x:51,y:52});
+    assert.deepEqual({x:51,y:51}, adjustedPoint);
+  });
 });
