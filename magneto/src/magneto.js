@@ -16,7 +16,7 @@ var magnetoEffect = (function () {
 			return this;
 		},
 		adjustPoint: function (point) {
-			var minDistance = 5.0;
+			var minDistance = radius * radius;
 			var adjustedPoint = point;
 
 			for (var i = 0; i < magneticPoints.length; i++) {
@@ -24,7 +24,7 @@ var magnetoEffect = (function () {
 				var distanceX = Math.abs(point.x - magneticPoint.x);
 				var distanceY = Math.abs(point.y - magneticPoint.y);
 				if (distanceX <= radius && distanceY <= radius) {
-					var distance = Math.min(distanceX, distanceY);
+					var distance = distanceX * distanceX + distanceY * distanceY;
 					if (distance < minDistance) {
 						adjustedPoint = magneticPoint;
 						minDistance = distance;

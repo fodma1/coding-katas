@@ -46,4 +46,11 @@ suite('magnetoEffect', function() {
     var adjustedPoint = magnetoEffect.adjustPoint({x:51,y:52});
     assert.deepEqual({x:51,y:51}, adjustedPoint);
   });
+
+  test( 'Check radius', function() {
+    magnetoEffect.removeMagneticPoints();
+    magnetoEffect.addMagneticPoint({x:50,y:50}).addMagneticPoint({x:51,y:55});
+    var adjustedPoint = magnetoEffect.adjustPoint({x:52,y:52});
+    assert.deepEqual({x:50,y:50}, adjustedPoint);
+  });
 });
