@@ -6,6 +6,18 @@ var magnetoEffect = require('../src/magneto.js').magnetoEffect;
 
 suite('magnetoEffect', function() {
 
+  test( 'Get magnetic points', function() {
+    var magneticPoints = magnetoEffect.getMagneticPoints();
+    assert.deepEqual([], magneticPoints);
+  });
+
+  test( 'Test magnetic points isolation', function() {
+    var magneticPoints = magnetoEffect.getMagneticPoints();
+    magneticPoints.push({x:50,y:50});
+    var magneticPoints2 = magnetoEffect.getMagneticPoints();
+    assert.deepEqual([], magneticPoints2);
+  });
+
   test( 'Adding magnetic point', function() {
     magnetoEffect.addMagneticPoint({x:50,y:50});
     var magneticPoints = magnetoEffect.getMagneticPoints();

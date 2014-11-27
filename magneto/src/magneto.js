@@ -1,7 +1,7 @@
 
-var magnetoEffect = (function () {
+var magnetoEffectConstructor = function (_radius) {
 	var magneticPoints = [];
-	var radius = 5;
+	var radius = _radius || 5.0;
 
 	return { 
 		addMagneticPoint: function (magneticPoint) {
@@ -32,6 +32,7 @@ var magnetoEffect = (function () {
 		}
 
 	}
-})();
+};
+var magnetoEffect = magnetoEffectConstructor();
 
 module.exports.magnetoEffect = magnetoEffect;
