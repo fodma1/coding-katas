@@ -159,13 +159,6 @@ suite('fileLottery', function() {
     }());
 
     var checkInput = function (input) {
-      // var f = new fileLottery(input, function() {
-      //   var cntr = 0;
-      //   return function(size) {
-      //     return cntr++ % size;
-      //   };
-      // }());
-
       // If something is failing, the stubs won't be restored. How should I avoid this?
       var f = new fileLottery(input);
       for (var i = 0; i < EXPECTED_FILENAME.length + 3; i++ )
